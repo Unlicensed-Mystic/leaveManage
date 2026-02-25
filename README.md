@@ -2,6 +2,8 @@
 
 A full-stack HR Leave & Reimbursement Management System with JWT authentication, role-based access control, and a modern dark UI.
 
+https://leave-manage-rho.vercel.app
+
 ## Tech Stack
 
 | Layer | Technology |
