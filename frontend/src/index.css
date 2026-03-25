@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-/* ── Design tokens (dark default) ─────────────────────── */
+
 :root {
   --primary: #6366f1;
   --primary-dark: #4f46e5;
@@ -19,18 +19,18 @@
   --text-muted: #94a3b8;
 }
 
-/* ── Light theme tokens ─────────────────────────────── */
+
 html.light {
   --bg: #eef0f5;
-  /* warm muted slate page bg */
+
   --surface: #f5f6fa;
-  /* off-white cards (not pure white) */
+
   --surface2: #e4e7ef;
-  /* slightly darker tertiary */
+
   --border: #d1d5e0;
-  /* soft gray border */
+
   --text: #1e293b;
-  /* dark slate, not full black */
+
   --text-muted: #64748b;
   color-scheme: light;
 }
@@ -47,7 +47,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* ── Scrollbar ─────────────────────────────────────── */
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -61,27 +61,19 @@ body {
   border-radius: 3px;
 }
 
-/* ════════════════════════════════════════════════════
-   LIGHT MODE OVERRIDES
-   Overrides all hardcoded Tailwind hex classes used in
-   the app without needing to touch every component.
-   ════════════════════════════════════════════════════ */
 
-/* ── Gradient cards: desaturate so they look pastel ─ */
-/* Targets any element that uses a Tailwind `from-*` gradient */
 html.light [class*="from-"] {
   filter: saturate(0.45) brightness(1.12);
 }
 
-/* Re-enable full vividness for tiny accent elements      */
-/* (avatars, status dots, badges) that also use from-*   */
+
 html.light [class*="from-"][class$="rounded-full"],
 html.light [class*="from-"][class*="text-xs"],
 html.light [class*="from-"][class*="text-sm"] {
   filter: none;
 }
 
-/* ── Backgrounds ─────────────────────────────────── */
+
 html.light .bg-\[\#0f172a\] {
   background-color: #eef0f5 !important;
 }
@@ -106,7 +98,7 @@ html.light .bg-\[\#334155\]\/50 {
   background-color: rgba(228, 231, 239, 0.75) !important;
 }
 
-/* ── Borders ─────────────────────────────────────── */
+
 html.light .border-\[\#334155\] {
   border-color: #d1d5e0 !important;
 }
@@ -115,12 +107,12 @@ html.light .border-\[\#475569\] {
   border-color: #94a3b8 !important;
 }
 
-/* ── Dividers ────────────────────────────────────── */
+
 html.light .divide-\[\#334155\]> :not([hidden])~ :not([hidden]) {
   border-color: #e2e8f0 !important;
 }
 
-/* ── Text ────────────────────────────────────────── */
+
 html.light .text-white {
   color: #0f172a !important;
 }
@@ -133,7 +125,7 @@ html.light .text-\[\#64748b\] {
   color: #94a3b8 !important;
 }
 
-/* ── Hover states ────────────────────────────────── */
+
 html.light .hover\:bg-\[\#1e293b\]:hover {
   background-color: #f1f5f9 !important;
 }
@@ -146,7 +138,7 @@ html.light .hover\:bg-\[\#334155\]\/30:hover {
   background-color: rgba(203, 213, 225, 0.5) !important;
 }
 
-/* ── Sidebar ─────────────────────────────────────── */
+
 html.light aside {
   background-color: #ffffff !important;
   border-color: #e2e8f0 !important;
@@ -156,12 +148,12 @@ html.light aside .border-\[\#334155\] {
   border-color: #e2e8f0 !important;
 }
 
-/* ── Sticky headers ──────────────────────────────── */
+
 html.light .backdrop-blur {
   background-color: rgba(241, 245, 249, 0.85) !important;
 }
 
-/* ── Inputs / Textareas / Selects ───────────────── */
+
 html.light input:not([type="checkbox"]),
 html.light textarea,
 html.light select {
@@ -175,18 +167,18 @@ html.light textarea::placeholder {
   color: #94a3b8 !important;
 }
 
-/* ── Table rows ──────────────────────────────────── */
+
 html.light tr.hover\:bg-\[\#1e293b\]:hover,
 html.light tr.hover\:bg-\[\#334155\]\/30:hover {
   background-color: #f1f5f9 !important;
 }
 
-/* ── Modal overlay bg ────────────────────────────── */
+
 html.light .bg-black\/70 {
   background-color: rgba(15, 23, 42, 0.4) !important;
 }
 
-/* ── Smooth transitions ──────────────────────────── */
+
 aside,
 main,
 div,
