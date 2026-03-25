@@ -1,4 +1,4 @@
-// Reusable Loading Spinner
+
 export const LoadingSpinner = ({ size = 'md', fullPage = false }) => {
     const sizes = { sm: 'w-6 h-6 border-2', md: 'w-10 h-10 border-4', lg: 'w-16 h-16 border-4' };
 
@@ -18,7 +18,7 @@ export const LoadingSpinner = ({ size = 'md', fullPage = false }) => {
     return <div className="flex justify-center py-16">{spinner}</div>;
 };
 
-// Reusable Error Message (inline, inside a page)
+
 export const ErrorMessage = ({ message, onRetry }) => (
     <div className="flex flex-col items-center justify-center py-16 gap-4">
         <div className="w-16 h-16 rounded-full bg-red-500/10 border border-red-500/30 flex items-center justify-center text-3xl">
@@ -39,7 +39,7 @@ export const ErrorMessage = ({ message, onRetry }) => (
     </div>
 );
 
-// Empty State component
+
 export const EmptyState = ({ icon = '📭', title, subtitle, action }) => (
     <div className="flex flex-col items-center justify-center py-16 gap-3">
         <div className="text-5xl">{icon}</div>
