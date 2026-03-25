@@ -5,14 +5,14 @@ const api = axios.create({
     headers: { 'Content-Type': 'application/json' },
 });
 
-// Attach JWT token automatically
+
 api.interceptors.request.use((config) => {
     const token = localStorage.getItem('lms_token');
     if (token) config.headers.Authorization = `Bearer ${token}`;
     return config;
 });
 
-// Global response interceptor
+
 api.interceptors.response.use(
     (res) => res,
     (err) => {
