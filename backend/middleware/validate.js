@@ -1,9 +1,6 @@
 const { body, param, validationResult } = require('express-validator');
 
-/**
- * Middleware: collect express-validator errors and return 422 if any exist.
- * Place this AFTER the validation rules in a route chain.
- */
+
 const validate = (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -19,9 +16,7 @@ const validate = (req, res, next) => {
     next();
 };
 
-/* ─────────────────────────────────────────────────
-   AUTH VALIDATORS
-───────────────────────────────────────────────── */
+
 const validateRegister = [
     body('name')
         .trim()
@@ -74,9 +69,7 @@ const validateUpdateProfile = [
     validate,
 ];
 
-/* ─────────────────────────────────────────────────
-   LEAVE VALIDATORS
-───────────────────────────────────────────────── */
+
 const LEAVE_TYPES = ['casual', 'sick', 'annual', 'unpaid'];
 
 const validateApplyLeave = [
@@ -124,9 +117,7 @@ const validateLeaveStatus = [
     validate,
 ];
 
-/* ─────────────────────────────────────────────────
-   REIMBURSEMENT VALIDATORS
-───────────────────────────────────────────────── */
+
 const REIMBURSEMENT_CATEGORIES = ['travel', 'food', 'accommodation', 'medical', 'equipment', 'other'];
 
 const validateSubmitReimbursement = [
@@ -180,9 +171,7 @@ const validateReimbursementStatus = [
     validate,
 ];
 
-/* ─────────────────────────────────────────────────
-   ADMIN VALIDATORS
-───────────────────────────────────────────────── */
+
 const validateCreateUser = [
     body('name')
         .trim()
