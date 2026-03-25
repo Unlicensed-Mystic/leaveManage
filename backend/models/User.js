@@ -44,14 +44,14 @@ const userSchema = new mongoose.Schema(
     { timestamps: true }
 );
 
-// Hash password before saving (Mongoose 7+ — no next() needed with async)
+
 userSchema.pre('save', async function () {
     if (!this.isModified('password')) return;
     const salt = await bcrypt.genSalt(12);
     this.password = await bcrypt.hash(this.password, salt);
 });
 
-// Compare password
+
 userSchema.methods.comparePassword = async function (candidatePassword) {
     return await bcrypt.compare(candidatePassword, this.password);
 };
